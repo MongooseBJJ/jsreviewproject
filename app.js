@@ -65,3 +65,9 @@ nextBtn.addEventListener('click', function() {
     currentItem++
     showStrain(currentItem);
 });
+
+//show previous strain
+prevBtn.addEventListener('click', function() {
+    currentItem--
+    showStrain(currentItem);
+});
