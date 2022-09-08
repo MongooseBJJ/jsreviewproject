@@ -62,12 +62,18 @@ function showStrain(strain) {
 
 // show next strain
 nextBtn.addEventListener('click', function() {
-    currentItem++
+    currentItem++;
+    if (currentItem > reviews.length - 1) {
+        currentItem = 0;
+    }
     showStrain(currentItem);
 });
 
 //show previous strain
 prevBtn.addEventListener('click', function() {
-    currentItem--
+    currentItem--;
+    if (currentItem < 0) {
+        currentItem = reviews.length;
+    }
     showStrain(currentItem);
 });
