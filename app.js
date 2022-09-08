@@ -77,3 +77,10 @@ prevBtn.addEventListener('click', function() {
     }
     showStrain(currentItem);
 });
+
+//random strain
+randomBtn.addEventListener('click', function() {
+    currentItem = Math.floor(Math.random() * reviews.length);
+    console.log(currentItem);
+    showStrain(currentItem);
+});
