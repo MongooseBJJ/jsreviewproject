@@ -1,7 +1,7 @@
 //local data, normally would using Angular
 const reviews = [{
         id: 1,
-        name: "Mai Mai Maui",
+        strains: "Mai Mai Maui",
         dominant: "Sativa",
         img: "https://cdn.pixabay.com/photo/2017/03/16/23/19/cannabis-2150543_960_720.jpg",
         text: "Random description text that probably doesn't mean anything to the reader anyway"
@@ -9,7 +9,7 @@ const reviews = [{
     },
     {
         id: 2,
-        name: "Blueberry Cake",
+        strains: "Blueberry Cake",
         dominant: "Indica",
         img: "https://cdn.pixabay.com/photo/2017/07/18/22/22/weed-2517251_960_720.jpg",
         text: "Random description text that probably doesn't mean anything to the reader anyway"
@@ -17,7 +17,7 @@ const reviews = [{
     },
     {
         id: 3,
-        name: "Ice road trucker",
+        strains: "Ice road trucker",
         dominant: "Sativa",
         img: "https://cdn.pixabay.com/photo/2014/09/16/19/52/cannabis-448661_960_720.jpg", // photo by pixabay user cheifyc
         text: "Random description text that probably doesn't mean anything to the reader anyway"
@@ -25,7 +25,7 @@ const reviews = [{
     },
     {
         id: 4,
-        name: "Star Fox",
+        strains: "Star Fox",
         dominant: "Hybrid",
         img: "https://cdn.pixabay.com/photo/2018/11/07/19/00/bud-3801028_960_720.jpg", //photo by pixabay user David Cardinez
         text: "Random description text that probably doesn't mean anything to the reader anyway"
@@ -35,7 +35,7 @@ const reviews = [{
 
 //select items
 const img = document.getElementById("strain-img");
-const strain = document.getElementById("name");
+const strains = document.getElementById("strain");
 const dominant = document.getElementById("dominant");
 const text = document.getElementById("info");
 
@@ -48,9 +48,20 @@ let currentItem = 0;
 
 //load initial item
 window.addEventListener("DOMContentLoaded", function() {
+    showStrain(currentItem);
+});
+
+// show strain based on item
+function showStrain(strain) {
     const item = reviews[currentItem];
     img.src = item.img;
-    strain.textContent = item.name;
+    strains.textContent = item.strains;
     dominant.textContent = item.dominant;
-    text.textContent = item.info;
+    text.textContent = item.text;
+}
+
+// show next strain
+nextBtn.addEventListener('click', function() {
+    currentItem++
+    showStrain(currentItem);
 });
