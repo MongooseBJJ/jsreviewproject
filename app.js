@@ -31,4 +31,26 @@ const reviews = [{
         text: "Random description text that probably doesn't mean anything to the reader anyway"
 
     },
-]
+];
+
+//select items
+const img = document.getElementById("strain-img");
+const strain = document.getElementById("name");
+const dominant = document.getElementById("dominant");
+const text = document.getElementById("info");
+
+const prevBtn = document.querySelector('.prev-but');
+const nextBtn = document.querySelector('.next-but');
+const randomBtn = document.querySelector('.random-but');
+
+//set starting item
+let currentItem = 0;
+
+//load initial item
+window.addEventListener("DOMContentLoaded", function() {
+    const item = reviews[currentItem];
+    img.src = item.img;
+    strain.textContent = item.name;
+    dominant.textContent = item.dominant;
+    text.textContent = item.info;
+});
